@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Success Message Template</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    
+    .container {
+      max-width: 400px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    
+    h1 {
+      text-align: center;
+    }
+    
+    .success {
+      text-align: center;
+      margin-top: 20px;
+    }
+    
+    .success .icon {
+      font-size: 60px;
+      color: #4CAF50;
+      margin-bottom: 20px;
+    }
+    
+    .success p {
+      font-size: 18px;
+      color: #333;
+    }
+    
+    .success button {
+      padding: 8px 16px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Success Message</h1>
+    
+    <div class="success">
+      <div class="icon">&#10004;</div>
+      <p>Your query was successfully added</p>
+      <a href="{% url 'show' %}"><button>OK</button></a>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Homepage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        li:last-child {
+            border-bottom: none;
+        }
+
+        li a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        li a:hover {
+            text-decoration: underline;
+        }
+
+        .logout {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .logout button {
+            padding: 8px 16px;
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Helpdesk Management System</h1>
+
+        <ul>
+            <li><a href="{% url 'raised' %}">Raise Ticket</a></li>
+            <li><a href="{% url 'show' %}">Query Management</a></li>
+            <li><a href="{% url 'faq' %}">FAQ</a></li>
+        </ul>
+
+        <div class="logout">
+            <a href="{% url 'logout' %}"><button>Logout</button></a>
+        </div>
+
+        {% if request.user.is_authenticated %}
+        <div>
+            <h3>authenticated as {{ request.user }}</h3>
+        </div>
+        {% endif %}
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>FAQ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .question {
+            font-weight: bold;
+            color: #007bff;
+            cursor: pointer;
+        }
+
+        .answer {
+            margin-top: 10px;
+            display: none;
+        }
+
+        .answer p {
+            margin: 0;
+        }
+    </style>
+    <script>
+        function toggleAnswer(index) {
+            const answer = document.querySelector(`#answer${index}`);
+            answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <a href="{% url 'index' %}">Close</a>
+        <h1>Frequently Asked Questions</h1>
+
+        <div class="faq-item">
+            <div class="question" onclick="toggleAnswer(1)">Question 1: How do I create an account?</div>
+            <div id="answer1" class="answer">
+                <p>Answer: To create an account, click on the "Sign Up" button and follow the registration process.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="question" onclick="toggleAnswer(2)">Question 2: Can I change my username?</div>
+            <div id="answer2" class="answer">
+                <p>Answer: Yes, you can change your username by going to the "Account Settings" and selecting the
+                    "Change Username" option.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="question" onclick="toggleAnswer(3)">Question 3: How do I reset my password?</div>
+            <div id="answer3" class="answer">
+                <p>Answer: To reset your password, click on the "Forgot Password" link on the login page and follow the
+                    instructions to reset it.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="question" onclick="toggleAnswer(4)">Question 4: Is my personal information secure?</div>
+            <div id="answer4" class="answer">
+                <p>Answer: Yes, we take the security of your personal information seriously and have implemented
+                    measures to protect it.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="question" onclick="toggleAnswer(5)">Question 5: How can I contact customer support?</div>
+            <div id="answer5" class="answer">
+                <p>Answer: You can contact our customer support team by visiting the "Contact Us" page and filling out
+                    the form.</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

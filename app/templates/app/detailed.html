@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raise Ticket</title>
+    <style>
+        /* Reset default margin and padding */
+        body, h2, ul, li {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Set background color and font family */
+        body {
+            background-color: #ffffff;
+            font-family: Helvetica, Arial, sans-serif;
+        }
+
+        /* Header styles */
+        header {
+            background-color: #3b5998;
+            color: #ffffff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* Container styles */
+        .container {
+            margin: 20px auto;
+            max-width: 400px;
+            border: 1px solid #ccc;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Ticket information styles */
+        .container h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .container ul {
+            list-style: none;
+        }
+
+        .container li {
+            margin-bottom: 10px;
+        }
+
+        .container li:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Resolve Ticketing System</h1>
+    </header>
+
+    <div class="container">
+        <a href="{% url 'index' %}">Close</a>
+        <h2>Raise Ticket</h2>
+        {% if new_data %}
+        <ul>
+            <li>Title: {{ new_data.title }}</li>
+            <li>Issue: {{ new_data.issue }}</li>
+            <li>Raised by: {{ new_data.user }}</li>
+            <li>Commented by: {{ new_data.comment }}</li>
+        </ul>
+        {% endif %}
+    </div>
+
+</body>
+
+</html>
